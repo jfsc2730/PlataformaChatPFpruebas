@@ -11,10 +11,13 @@ defmodule TCPServer do
 
     IO.puts("Servidor TCP escuchando en el puerto 4040...")
     spawn(fn ->
-      System.cmd("java", [
-        "--module-path", "C:\\Users\\tomaz\\Downloads\\openjfx-24_windows-x64_bin-sdk\\javafx-sdk-24\\lib",
+      System.cmd("cmd", [
+        "/c",
+        "start",
+        "java",
+        "--module-path", "C:\\Users\\chica\\Downloads\\FxViejo\\openjfx-17.0.15_windows-x64_bin-sdk\\javafx-sdk-17.0.15\\lib",
         "--add-modules", "javafx.controls,javafx.fxml",
-        "-jar", "C:\\Users\\tomaz\\OneDrive\\Documentos\\Cositas mias\\Universidad\\Uni Quindio\\Cuarto Semestre\\Programacion3\\PlataformaChatPFpruebas\\co.edu.uniquindio.elixirpf\\demo\\target\\JavaFXApp.jar"
+        "-jar", "C:\\Users\\chica\\OneDrive\\Escritorio\\ProyectoFinalProgra3\\PlataformaChatPFpruebas\\co.edu.uniquindio.elixirpf\\demo\\target\\JavaFXApp.jar"
       ])
     end)
     loop_acceptor(listen_socket)
